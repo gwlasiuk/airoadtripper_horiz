@@ -40,10 +40,10 @@ html, body {
 /* GEMINI HEADER BADGE CONTAINER */
 .header-badge-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: left;
+  align-items: left;
   width: 100%;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 4px;
   z-index: 2;
 }
