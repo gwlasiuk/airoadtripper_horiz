@@ -32,27 +32,6 @@ body {
   background-color: transparent;
 }
 
-.noise-overlay {
-  position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  filter: url(#noise);
-  opacity: 0.12;
-  pointer-events: none;
-  z-index: 10;
-}
-
-.noise-filter { position: absolute; width: 0; height: 0; }
-
-/* HORIZONTAL TRACK */
-.horizontal-track-container {
-  width: 100%;
-  max-width: 900px;
-  margin: 60px auto 40px auto;
-  position: relative;
-  height: 40px;
-  z-index: 2;
-}
-
 .route-track-horizontal {
   position: relative;
   width: 100%;
