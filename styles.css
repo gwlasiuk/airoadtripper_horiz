@@ -16,20 +16,36 @@
   padding: 0;
 }
 
-body {
+html, body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
-  background-color: transparent;
+  background: transparent !important;
+  background-color: transparent !important;
   color: var(--text-main);
+  margin: 0;
+  padding: 0;
 }
 
 .roadtrip-scroller-main {
   position: relative;
   width: 100%;
-  min-height: 700px;
+  min-height: auto;
   display: flex;
   flex-direction: column;
-  background-color: transparent;
+  justify-content: flex-start;
+  background: transparent !important;
+  padding-top: 0;
+}
+
+/* HORIZONTAL TRACK WRAPPER (Constrains width and pulls track up) */
+.horizontal-track-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 10px auto 20px auto;
+  position: relative;
+  height: 40px;
+  z-index: 2;
+  padding: 0 20px;
 }
 
 .route-track-horizontal {
@@ -67,26 +83,11 @@ body {
   background: var(--c-coral);
 }
 
-.track-node.active { background: #1f2937; }
-
-/* ADD THIS WRAPPER RULE TO CONSTRAIN THE TRACK WIDTH */
-.horizontal-track-container {
-  width: 100%;
-  max-width: 900px; /* Aligns timeline nicely with the 1000px content grid below */
-  margin: 40px auto 30px auto; /* Centers the timeline horizontally */
-  position: relative;
-  height: 40px;
-  z-index: 2;
-  padding: 0 20px; /* Optional padding to keep end nodes slightly inside the margins */
+.track-node.active { 
+  background: #1f2937; 
 }
 
-.route-track-horizontal {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-/* Car rotated 90deg to point right */
+/* CAR MARKER (Rotated 90deg) */
 .car-marker {
   position: absolute;
   top: 50%;
@@ -100,7 +101,10 @@ body {
   pointer-events: none;
 }
 
-.car-svg { width: 100%; height: 100%; }
+.car-svg { 
+  width: 100%; 
+  height: 100%; 
+}
 
 /* CAROUSEL WRAPPER & ARROWS */
 .carousel-wrapper {
@@ -154,7 +158,7 @@ body {
 .content-stream {
   position: relative;
   width: 55%;
-  height: 520px; /* Fixed height to prevent layout jumping */
+  height: 480px;
 }
 
 .stop-card {
@@ -242,7 +246,10 @@ body {
 .btn-indigo { background-color: var(--c-indigo); box-shadow: 0 4px 12px rgba(103, 128, 255, 0.3); }
 .btn-turquoise { background-color: var(--c-turquoise); color: #1f2937; box-shadow: 0 4px 12px rgba(35, 238, 190, 0.3); }
 .btn-orange { background-color: var(--c-orange); box-shadow: 0 4px 12px rgba(255, 109, 55, 0.3); }
-.start-btn:hover { transform: translateY(-2px); }
+
+.start-btn:hover { 
+  transform: translateY(-2px); 
+}
 
 /* GLOBE PASSPORT BADGE STAMP */
 .passport-stamp {
@@ -261,7 +268,10 @@ body {
   user-select: none;
 }
 
-.globe-icon { width: 16px; height: 16px; }
+.globe-icon { 
+  width: 16px; 
+  height: 16px; 
+}
 
 .stamp-coral { color: var(--c-coral); border-color: var(--c-coral); }
 .stamp-lime { color: #6b8800; border-color: #6b8800; }
@@ -274,6 +284,7 @@ body {
   transform: rotate(-1deg) scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
+
 .stamp-coral.stamped { background-color: var(--c-coral); color: #ffffff; }
 .stamp-lime.stamped { background-color: var(--c-lime); color: #1f2937; }
 .stamp-indigo.stamped { background-color: var(--c-indigo); color: #ffffff; }
@@ -290,7 +301,7 @@ body {
 
 .polaroid-card-container {
   width: 320px;
-  height: 380px; /* Snug height */
+  height: 380px;
   perspective: 1200px;
 }
 
@@ -311,7 +322,10 @@ body {
 
 .polaroid-face {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
   background: var(--polaroid-white);
   padding: 16px 16px 20px 16px;
   box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.18);
@@ -321,7 +335,11 @@ body {
   overflow: hidden;
 }
 
-.polaroid-front { display: flex; flex-direction: column; z-index: 2; }
+.polaroid-front { 
+  display: flex; 
+  flex-direction: column; 
+  z-index: 2; 
+}
 
 .polaroid-photo-frame {
   position: relative;
@@ -333,14 +351,20 @@ body {
 
 .polaroid-img {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
+  top: 0; 
+  left: 0; 
+  width: 100%; 
+  height: 100%;
   object-fit: cover;
   opacity: 0;
   transform: scale(1.08);
   transition: opacity 0.6s ease-in-out, transform 0.8s ease;
 }
 
-.polaroid-img.active { opacity: 1; transform: scale(1); }
+.polaroid-img.active { 
+  opacity: 1; 
+  transform: scale(1); 
+}
 
 .polaroid-caption {
   margin-top: 14px;
