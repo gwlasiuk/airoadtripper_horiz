@@ -1,0 +1,401 @@
+:root {
+  --text-main: #1f2937;
+  --text-muted: #4b5563;
+  --polaroid-white: #ffffff;
+  
+  --c-coral: #FF4E51;
+  --c-lime: #A2CF00;
+  --c-indigo: #6780FF;
+  --c-turquoise: #23EEBE;
+  --c-orange: #FF6D37;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  background-color: transparent;
+  color: var(--text-main);
+}
+
+.roadtrip-scroller-main {
+  position: relative;
+  width: 100%;
+  min-height: 700px;
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.noise-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  filter: url(#noise);
+  opacity: 0.12;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.noise-filter { position: absolute; width: 0; height: 0; }
+
+/* HORIZONTAL TRACK */
+.horizontal-track-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 60px auto 40px auto;
+  position: relative;
+  height: 40px;
+  z-index: 2;
+}
+
+.route-track-horizontal {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.track-line-horizontal {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: repeating-linear-gradient(to right, #1f2937 0 8px, transparent 8px 16px);
+  transform: translateY(-50%);
+}
+
+.track-node {
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  background: #ffffff;
+  border: 3px solid #1f2937;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  z-index: 3;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.track-node:hover {
+  transform: translate(-50%, -50%) scale(1.4);
+  background: var(--c-coral);
+}
+
+.track-node.active { background: #1f2937; }
+
+/* Car rotated 90deg to point right */
+.car-marker {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 50px;
+  height: 84px;
+  transform: translate(-50%, -50%) rotate(90deg);
+  transition: left 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  filter: drop-shadow(0 6px 8px rgba(0,0,0,0.15));
+  z-index: 5;
+  pointer-events: none;
+}
+
+.car-svg { width: 100%; height: 100%; }
+
+/* CAROUSEL WRAPPER & ARROWS */
+.carousel-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.nav-arrow {
+  background: #ffffff;
+  border: 2px solid #e2e8f0;
+  color: #1f2937;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.nav-arrow:hover:not(:disabled) {
+  background: #1f2937;
+  color: #ffffff;
+  border-color: #1f2937;
+  transform: scale(1.1);
+}
+
+.nav-arrow:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* LAYOUT GRID */
+.roadtrip-grid {
+  display: flex;
+  width: 100%;
+  max-width: 1000px;
+  padding: 0 20px;
+}
+
+/* LEFT SIDE: Absolute Stacked Cards */
+.content-stream {
+  position: relative;
+  width: 55%;
+  height: 520px; /* Fixed height to prevent layout jumping */
+}
+
+.stop-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 40px;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(30px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.stop-card.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0);
+}
+
+.city-skyline-art {
+  width: 100%;
+  max-width: 350px;
+  height: 70px;
+  margin-bottom: 12px;
+  color: #1f2937;
+  opacity: 0.85;
+}
+
+.city-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.tag-coral { color: var(--c-coral); }
+.tag-lime { color: #6b8800; }
+.tag-indigo { color: var(--c-indigo); }
+.tag-turquoise { color: #00b388; }
+.tag-orange { color: var(--c-orange); }
+
+.stop-card h2 {
+  font-size: 2.1rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.stop-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* ACTION ROW & BUTTONS */
+.action-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.start-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.btn-coral { background-color: var(--c-coral); box-shadow: 0 4px 12px rgba(255, 78, 81, 0.3); }
+.btn-lime { background-color: var(--c-lime); color: #1f2937; box-shadow: 0 4px 12px rgba(162, 207, 0, 0.3); }
+.btn-indigo { background-color: var(--c-indigo); box-shadow: 0 4px 12px rgba(103, 128, 255, 0.3); }
+.btn-turquoise { background-color: var(--c-turquoise); color: #1f2937; box-shadow: 0 4px 12px rgba(35, 238, 190, 0.3); }
+.btn-orange { background-color: var(--c-orange); box-shadow: 0 4px 12px rgba(255, 109, 55, 0.3); }
+.start-btn:hover { transform: translateY(-2px); }
+
+/* GLOBE PASSPORT BADGE STAMP */
+.passport-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 30px;
+  border: 2px stroke currentColor;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  transform: rotate(-3deg);
+  opacity: 0.35;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  user-select: none;
+}
+
+.globe-icon { width: 16px; height: 16px; }
+
+.stamp-coral { color: var(--c-coral); border-color: var(--c-coral); }
+.stamp-lime { color: #6b8800; border-color: #6b8800; }
+.stamp-indigo { color: var(--c-indigo); border-color: var(--c-indigo); }
+.stamp-turquoise { color: #00b388; border-color: #00b388; }
+.stamp-orange { color: var(--c-orange); border-color: var(--c-orange); }
+
+.passport-stamp.stamped {
+  opacity: 1;
+  transform: rotate(-1deg) scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+.stamp-coral.stamped { background-color: var(--c-coral); color: #ffffff; }
+.stamp-lime.stamped { background-color: var(--c-lime); color: #1f2937; }
+.stamp-indigo.stamped { background-color: var(--c-indigo); color: #ffffff; }
+.stamp-turquoise.stamped { background-color: var(--c-turquoise); color: #1f2937; }
+.stamp-orange.stamped { background-color: var(--c-orange); color: #ffffff; }
+
+/* STAGE & POLAROID SETUP */
+.stage-wrapper {
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.polaroid-card-container {
+  width: 320px;
+  height: 380px; /* Snug height */
+  perspective: 1200px;
+}
+
+.polaroid-card {
+  --tilt-angle: -3.5deg;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transform: rotate(var(--tilt-angle));
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.polaroid-card.is-flipped {
+  transform: rotate(var(--tilt-angle)) rotateY(180deg);
+}
+
+.polaroid-face {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: var(--polaroid-white);
+  padding: 16px 16px 20px 16px;
+  box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.18);
+  -webkit-backface-visibility: hidden !important;
+  backface-visibility: hidden !important;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.polaroid-front { display: flex; flex-direction: column; z-index: 2; }
+
+.polaroid-photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #e2e8f0;
+  overflow: hidden;
+}
+
+.polaroid-img {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transform: scale(1.08);
+  transition: opacity 0.6s ease-in-out, transform 0.8s ease;
+}
+
+.polaroid-img.active { opacity: 1; transform: scale(1); }
+
+.polaroid-caption {
+  margin-top: 14px;
+  font-family: 'Caveat', cursive;
+  font-size: 1.45rem;
+  color: #111827;
+  text-align: center;
+}
+
+.polaroid-back {
+  transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
+  padding: 28px 22px;
+  background: #fdfbf7;
+  border: 2px dashed #cbd5e1;
+  z-index: 1;
+}
+
+.polaroid-back h3 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: #111827;
+  border-bottom: 2px stroke #e2e8f0;
+  padding-bottom: 8px;
+}
+
+.back-detail-item {
+  margin-bottom: 14px;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.back-detail-item strong {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--c-coral);
+  letter-spacing: 0.05em;
+  margin-bottom: 2px;
+}
+
+.tape-strip {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  width: 95px;
+  height: 28px;
+  background-color: rgba(255, 238, 180, 0.85);
+  border: 1px solid rgba(220, 200, 140, 0.4);
+  transform: translateX(-50%) rotate(-1.5deg);
+  backdrop-filter: blur(2px);
+  z-index: 6;
+}
