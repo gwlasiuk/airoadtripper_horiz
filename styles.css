@@ -16,39 +16,42 @@
   padding: 0;
 }
 
+/* 1. ADOPT WHEEL'S BODY FLEX & HEIGHT STRUCTURE */
 html, body {
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
-  background: transparent !important;
-  background-color: transparent !important;
-  color: var(--text-main);
   margin: 0;
   padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: transparent !important;
+  font-family: 'Inter', sans-serif;
+  color: var(--text-main);
+  overflow-x: hidden;
 }
 
+/* 2. MAIN CONTAINER FIT TO WRAPPER */
 .roadtrip-scroller-main {
-  position: relative;
   width: 100%;
-  min-height: auto;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
   background: transparent !important;
-  padding-top: 0;
 }
 
-/* GEMINI HEADER BADGE CONTAINER */
+/* GEMINI HEADER PILL BADGE */
 .header-badge-container {
   display: flex;
-  justify-content: left;
-  align-items: left;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-top: 0px;
-  margin-bottom: 4px;
+  margin-bottom: 15px;
   z-index: 2;
 }
 
-/* GRADIENT PILL BADGE */
 .gemini-pill-badge {
   display: inline-flex;
   align-items: center;
@@ -60,13 +63,8 @@ html, body {
   font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  
-  /* Gemini Gradient Mesh Palette */
   background: linear-gradient(135deg, #1a73e8 0%, #a142f4 50%, #ff5252 100%);
-  box-shadow: 
-    0 4px 15px rgba(161, 66, 244, 0.3),
-    inset 0 1px 1px rgba(255, 255, 255, 0.4);
-  
+  box-shadow: 0 4px 15px rgba(161, 66, 244, 0.3), inset 0 1px 1px rgba(255, 255, 255, 0.4);
   position: relative;
   overflow: hidden;
 }
@@ -82,11 +80,11 @@ html, body {
   50% { transform: scale(1.25); opacity: 1; }
 }
 
-/* HORIZONTAL TRACK WRAPPER */
+/* 3. ZERO-MARGIN HORIZONTAL TRACK */
 .horizontal-track-container {
   width: 100%;
   max-width: 900px;
-  margin: 10px auto 20px auto !important;
+  margin: 0 0 20px 0; /* Zero top margin */
   position: relative;
   height: 40px;
   z-index: 2;
@@ -128,11 +126,9 @@ html, body {
   background: var(--c-coral);
 }
 
-.track-node.active { 
-  background: #1f2937; 
-}
+.track-node.active { background: #1f2937; }
 
-/* CAR MARKER (Rotated 90deg) */
+/* CAR MARKER */
 .car-marker {
   position: absolute;
   top: 50%;
@@ -146,10 +142,7 @@ html, body {
   pointer-events: none;
 }
 
-.car-svg { 
-  width: 100%; 
-  height: 100%; 
-}
+.car-svg { width: 100%; height: 100%; }
 
 /* CAROUSEL WRAPPER & ARROWS */
 .carousel-wrapper {
@@ -203,7 +196,7 @@ html, body {
 .content-stream {
   position: relative;
   width: 55%;
-  height: 480px;
+  height: 440px;
 }
 
 .stop-card {
@@ -291,10 +284,7 @@ html, body {
 .btn-indigo { background-color: var(--c-indigo); box-shadow: 0 4px 12px rgba(103, 128, 255, 0.3); }
 .btn-turquoise { background-color: var(--c-turquoise); color: #1f2937; box-shadow: 0 4px 12px rgba(35, 238, 190, 0.3); }
 .btn-orange { background-color: var(--c-orange); box-shadow: 0 4px 12px rgba(255, 109, 55, 0.3); }
-
-.start-btn:hover { 
-  transform: translateY(-2px); 
-}
+.start-btn:hover { transform: translateY(-2px); }
 
 /* GLOBE PASSPORT BADGE STAMP */
 .passport-stamp {
@@ -313,10 +303,7 @@ html, body {
   user-select: none;
 }
 
-.globe-icon { 
-  width: 16px; 
-  height: 16px; 
-}
+.globe-icon { width: 16px; height: 16px; }
 
 .stamp-coral { color: var(--c-coral); border-color: var(--c-coral); }
 .stamp-lime { color: #6b8800; border-color: #6b8800; }
@@ -329,7 +316,6 @@ html, body {
   transform: rotate(-1deg) scale(1.05);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
 }
-
 .stamp-coral.stamped { background-color: var(--c-coral); color: #ffffff; }
 .stamp-lime.stamped { background-color: var(--c-lime); color: #1f2937; }
 .stamp-indigo.stamped { background-color: var(--c-indigo); color: #ffffff; }
@@ -367,10 +353,7 @@ html, body {
 
 .polaroid-face {
   position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   background: var(--polaroid-white);
   padding: 16px 16px 20px 16px;
   box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.18);
@@ -380,11 +363,7 @@ html, body {
   overflow: hidden;
 }
 
-.polaroid-front { 
-  display: flex; 
-  flex-direction: column; 
-  z-index: 2; 
-}
+.polaroid-front { display: flex; flex-direction: column; z-index: 2; }
 
 .polaroid-photo-frame {
   position: relative;
@@ -396,20 +375,14 @@ html, body {
 
 .polaroid-img {
   position: absolute;
-  top: 0; 
-  left: 0; 
-  width: 100%; 
-  height: 100%;
+  top: 0; left: 0; width: 100%; height: 100%;
   object-fit: cover;
   opacity: 0;
   transform: scale(1.08);
   transition: opacity 0.6s ease-in-out, transform 0.8s ease;
 }
 
-.polaroid-img.active { 
-  opacity: 1; 
-  transform: scale(1); 
-}
+.polaroid-img.active { opacity: 1; transform: scale(1); }
 
 .polaroid-caption {
   margin-top: 14px;
