@@ -1,55 +1,47 @@
-:root {
-  --text-main: #1f2937;
-  --text-muted: #4b5563;
-  --polaroid-white: #ffffff;
-  
-  --c-coral: #FF4E51;
-  --c-lime: #A2CF00;
-  --c-indigo: #6780FF;
-  --c-turquoise: #23EEBE;
-  --c-orange: #FF6D37;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-/* 1. ADOPT WHEEL'S BODY FLEX & HEIGHT STRUCTURE */
 html, body {
-  margin: 0;
-  padding: 0;
+  margin: 0 !important;
+  padding: 0 !important;
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  height: auto !important; /* Disables forcing full viewport height */
+  display: block; /* Removes flexbox centering on the root body */
   background: transparent !important;
-  font-family: 'Inter', sans-serif;
+  background-color: transparent !important;
   color: var(--text-main);
+  font-family: 'Inter', sans-serif;
   overflow-x: hidden;
 }
 
-/* 2. MAIN CONTAINER FIT TO WRAPPER */
 .roadtrip-scroller-main {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  padding: 15px 20px;
+  justify-content: flex-start; /* Pin directly to top */
+  padding: 0 20px !important; /* Zero top padding */
+  margin: 0 !important;
   background: transparent !important;
 }
 
-/* GEMINI HEADER PILL BADGE */
+/* HEADER BADGE (Flush at the top) */
 .header-badge-container {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  margin-bottom: 15px;
+  margin-top: 10px; /* Adjust this small number to taste */
+  margin-bottom: 10px;
   z-index: 2;
+}
+
+/* HORIZONTAL TRACK */
+.horizontal-track-container {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto 20px auto !important;
+  position: relative;
+  height: 40px;
+  z-index: 2;
+  padding: 0 20px;
 }
 
 .gemini-pill-badge {
