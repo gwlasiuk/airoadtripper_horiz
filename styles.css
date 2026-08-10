@@ -26,6 +26,7 @@ html, body {
   padding: 0;
 }
 
+/* 1. Ensure the main container has zero top padding and sticks to the top */
 .roadtrip-scroller-main {
   position: relative;
   width: 100%;
@@ -34,16 +35,17 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   background: transparent !important;
-  padding-top: 0;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
 }
 
-/* HORIZONTAL TRACK WRAPPER (Constrains width and pulls track up) */
+/* 2. Zero out the top margin on the track container */
 .horizontal-track-container {
   width: 100%;
   max-width: 900px;
-  margin: 10px auto 20px auto;
+  margin: 0 auto 10px auto !important; /* Forces 0px top margin */
   position: relative;
-  height: 40px;
+  height: 30px; /* Reduced from 40px to pull content up further */
   z-index: 2;
   padding: 0 20px;
 }
