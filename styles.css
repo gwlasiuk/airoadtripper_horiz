@@ -26,7 +26,6 @@ html, body {
   padding: 0;
 }
 
-/* 1. Ensure the main container has zero top padding and sticks to the top */
 .roadtrip-scroller-main {
   position: relative;
   width: 100%;
@@ -35,17 +34,61 @@ html, body {
   flex-direction: column;
   justify-content: flex-start;
   background: transparent !important;
-  padding-top: 0 !important;
-  margin-top: 0 !important;
+  padding-top: 0;
 }
 
-/* PULL THE TIMELINE DIRECTLY TO THE TOP */
+/* GEMINI HEADER BADGE CONTAINER */
+.header-badge-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 4px;
+  z-index: 2;
+}
+
+/* GRADIENT PILL BADGE */
+.gemini-pill-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 50px;
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  
+  /* Gemini Gradient Mesh Palette */
+  background: linear-gradient(135deg, #1a73e8 0%, #a142f4 50%, #ff5252 100%);
+  box-shadow: 
+    0 4px 15px rgba(161, 66, 244, 0.3),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4);
+  
+  position: relative;
+  overflow: hidden;
+}
+
+.sparkle-icon {
+  font-size: 0.95rem;
+  color: #ffe600;
+  animation: pulse-sparkle 2s infinite ease-in-out;
+}
+
+@keyframes pulse-sparkle {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.25); opacity: 1; }
+}
+
+/* HORIZONTAL TRACK WRAPPER */
 .horizontal-track-container {
   width: 100%;
   max-width: 900px;
-  margin: -35px auto 10px auto !important; /* Negative top margin pulls everything UP */
+  margin: 10px auto 20px auto !important;
   position: relative;
-  height: 30px;
+  height: 40px;
   z-index: 2;
   padding: 0 20px;
 }
