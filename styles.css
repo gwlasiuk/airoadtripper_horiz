@@ -1,13 +1,21 @@
 :root {
+  /* Common System Colors */
   --text-main: #1f2937;
   --text-muted: #4b5563;
   --polaroid-white: #ffffff;
   
+  /* Gemini Palette */
   --c-coral: #FF4E51;
   --c-lime: #A2CF00;
   --c-indigo: #6780FF;
   --c-turquoise: #23EEBE;
   --c-orange: #FF6D37;
+
+  /* Claude Warm Palette */
+  --c-terracotta: #D97706;
+  --c-burnt-orange: #C2410C;
+  --c-sand: #D97706;
+  --c-clay: #9A3412;
 }
 
 * {
@@ -31,7 +39,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* 2. MAIN CONTAINER FIX: Snap to top, remove vertical centering */
+/* 2. MAIN CONTAINER FIX: Snap to top */
 .roadtrip-scroller-main {
   position: relative;
   width: 100%;
@@ -45,7 +53,7 @@ html, body {
   margin: 0 !important;
 }
 
-/* GEMINI HEADER BADGE CONTAINER */
+/* HEADER BADGE CONTAINER */
 .header-badge-container {
   display: flex;
   justify-content: center;
@@ -56,7 +64,7 @@ html, body {
   z-index: 2;
 }
 
-/* GRADIENT PILL BADGE */
+/* BASE GRADIENT PILL BADGE */
 .gemini-pill-badge {
   display: inline-flex;
   align-items: center;
@@ -74,6 +82,14 @@ html, body {
     inset 0 1px 1px rgba(255, 255, 255, 0.4);
   position: relative;
   overflow: hidden;
+}
+
+/* CLAUDE PILL BADGE OVERRIDE */
+.claude-pill-badge {
+  background: linear-gradient(135deg, #d97706 0%, #c2410c 50%, #7c2d12 100%) !important;
+  box-shadow: 
+    0 4px 15px rgba(194, 65, 12, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
 }
 
 .sparkle-icon {
@@ -130,7 +146,7 @@ html, body {
 
 .track-node:hover {
   transform: translate(-50%, -50%) scale(1.4);
-  background: var(--c-coral);
+  background: var(--c-terracotta, var(--c-coral));
 }
 
 .track-node.active { 
@@ -251,11 +267,18 @@ html, body {
   margin-bottom: 6px;
 }
 
+/* GEMINI CITY TAGS */
 .tag-coral { color: var(--c-coral); }
 .tag-lime { color: #6b8800; }
 .tag-indigo { color: var(--c-indigo); }
 .tag-turquoise { color: #00b388; }
 .tag-orange { color: var(--c-orange); }
+
+/* CLAUDE CITY TAGS */
+.tag-terracotta { color: var(--c-terracotta); }
+.tag-burnt-orange { color: var(--c-burnt-orange); }
+.tag-sand { color: #b45309; }
+.tag-clay { color: var(--c-clay); }
 
 .stop-card h2 {
   font-size: 2.1rem;
@@ -291,24 +314,31 @@ html, body {
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+/* GEMINI BUTTONS */
 .btn-coral { background-color: var(--c-coral); box-shadow: 0 4px 12px rgba(255, 78, 81, 0.3); }
 .btn-lime { background-color: var(--c-lime); color: #1f2937; box-shadow: 0 4px 12px rgba(162, 207, 0, 0.3); }
 .btn-indigo { background-color: var(--c-indigo); box-shadow: 0 4px 12px rgba(103, 128, 255, 0.3); }
 .btn-turquoise { background-color: var(--c-turquoise); color: #1f2937; box-shadow: 0 4px 12px rgba(35, 238, 190, 0.3); }
 .btn-orange { background-color: var(--c-orange); box-shadow: 0 4px 12px rgba(255, 109, 55, 0.3); }
 
+/* CLAUDE BUTTONS */
+.btn-terracotta { background-color: var(--c-terracotta); box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3); }
+.btn-burnt-orange { background-color: var(--c-burnt-orange); box-shadow: 0 4px 12px rgba(194, 65, 12, 0.3); }
+.btn-sand { background-color: #d97706; color: #ffffff; box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25); }
+.btn-clay { background-color: var(--c-clay); box-shadow: 0 4px 12px rgba(154, 52, 18, 0.3); }
+
 .start-btn:hover { 
   transform: translateY(-2px); 
 }
 
-/* GLOBE PASSPORT BADGE STAMP */
+/* PASSPORT STAMP BADGES */
 .passport-stamp {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding: 6px 14px;
   border-radius: 30px;
-  border: 2px stroke currentColor;
+  border: 2px solid currentColor;
   font-size: 0.7rem;
   font-weight: 800;
   letter-spacing: 0.08em;
@@ -323,23 +353,29 @@ html, body {
   height: 16px; 
 }
 
+/* GEMINI STAMPS */
 .stamp-coral { color: var(--c-coral); border-color: var(--c-coral); }
 .stamp-lime { color: #6b8800; border-color: #6b8800; }
 .stamp-indigo { color: var(--c-indigo); border-color: var(--c-indigo); }
 .stamp-turquoise { color: #00b388; border-color: #00b388; }
 .stamp-orange { color: var(--c-orange); border-color: var(--c-orange); }
 
-.passport-stamp.stamped {
-  opacity: 1;
-  transform: rotate(-1deg) scale(1.05);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-}
-
 .stamp-coral.stamped { background-color: var(--c-coral); color: #ffffff; }
 .stamp-lime.stamped { background-color: var(--c-lime); color: #1f2937; }
 .stamp-indigo.stamped { background-color: var(--c-indigo); color: #ffffff; }
 .stamp-turquoise.stamped { background-color: var(--c-turquoise); color: #1f2937; }
 .stamp-orange.stamped { background-color: var(--c-orange); color: #ffffff; }
+
+/* CLAUDE STAMPS */
+.stamp-terracotta { color: var(--c-terracotta); border-color: var(--c-terracotta); }
+.stamp-burnt-orange { color: var(--c-burnt-orange); border-color: var(--c-burnt-orange); }
+.stamp-sand { color: #b45309; border-color: #b45309; }
+.stamp-clay { color: var(--c-clay); border-color: var(--c-clay); }
+
+.stamp-terracotta.stamped { background-color: var(--c-terracotta); color: #ffffff; }
+.stamp-burnt-orange.stamped { background-color: var(--c-burnt-orange); color: #ffffff; }
+.stamp-sand.stamped { background-color: #d97706; color: #ffffff; }
+.stamp-clay.stamped { background-color: var(--c-clay); color: #ffffff; }
 
 /* STAGE & POLAROID SETUP */
 .stage-wrapper {
@@ -438,7 +474,7 @@ html, body {
   font-size: 1.25rem;
   margin-bottom: 16px;
   color: #111827;
-  border-bottom: 2px stroke #e2e8f0;
+  border-bottom: 2px solid #e2e8f0;
   padding-bottom: 8px;
 }
 
@@ -452,7 +488,7 @@ html, body {
   display: block;
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: var(--c-coral);
+  color: var(--c-terracotta, var(--c-coral));
   letter-spacing: 0.05em;
   margin-bottom: 2px;
 }
@@ -469,59 +505,3 @@ html, body {
   backdrop-filter: blur(2px);
   z-index: 6;
 }
-
-/* ==========================================================================
-   CLAUDE AI SPECIFIC COLOR PALETTE & BUTTON OVERRIDES
-   ========================================================================== */
-
-:root {
-  /* Claude Warm Orange Palette */
-  --c-terracotta: #D97706;
-  --c-burnt-orange: #C2410C;
-  --c-sand: #D97706;
-  --c-clay: #9A3412;
-}
-
-/* CLAUDE GRADIENT PILL BADGE */
-.claude-pill-badge {
-  background: linear-gradient(135deg, #d97706 0%, #c2410c 50%, #7c2d12 100%) !important;
-  box-shadow: 
-    0 4px 15px rgba(194, 65, 12, 0.35),
-    inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
-}
-
-/* CLAUDE CITY TAG COLORS */
-.tag-terracotta { color: var(--c-terracotta); }
-.tag-burnt-orange { color: var(--c-burnt-orange); }
-.tag-sand { color: #b45309; }
-.tag-clay { color: var(--c-clay); }
-
-/* CLAUDE BUTTON VARIATIONS */
-.btn-terracotta { 
-  background-color: var(--c-terracotta); 
-  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3); 
-}
-.btn-burnt-orange { 
-  background-color: var(--c-burnt-orange); 
-  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.3); 
-}
-.btn-sand { 
-  background-color: #d97706; 
-  color: #ffffff; 
-  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25); 
-}
-.btn-clay { 
-  background-color: var(--c-clay); 
-  box-shadow: 0 4px 12px rgba(154, 52, 18, 0.3); 
-}
-
-/* CLAUDE PASSPORT STAMP STYLES */
-.stamp-terracotta { color: var(--c-terracotta); border-color: var(--c-terracotta); }
-.stamp-burnt-orange { color: var(--c-burnt-orange); border-color: var(--c-burnt-orange); }
-.stamp-sand { color: #b45309; border-color: #b45309; }
-.stamp-clay { color: var(--c-clay); border-color: var(--c-clay); }
-
-.stamp-terracotta.stamped { background-color: var(--c-terracotta); color: #ffffff; }
-.stamp-burnt-orange.stamped { background-color: var(--c-burnt-orange); color: #ffffff; }
-.stamp-sand.stamped { background-color: #d97706; color: #ffffff; }
-.stamp-clay.stamped { background-color: var(--c-clay); color: #ffffff; }
