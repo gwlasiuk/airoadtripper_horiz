@@ -469,3 +469,59 @@ html, body {
   backdrop-filter: blur(2px);
   z-index: 6;
 }
+
+/* ==========================================================================
+   CLAUDE AI SPECIFIC COLOR PALETTE & BUTTON OVERRIDES
+   ========================================================================== */
+
+:root {
+  /* Claude Warm Orange Palette */
+  --c-terracotta: #D97706;
+  --c-burnt-orange: #C2410C;
+  --c-sand: #D97706;
+  --c-clay: #9A3412;
+}
+
+/* CLAUDE GRADIENT PILL BADGE */
+.claude-pill-badge {
+  background: linear-gradient(135deg, #d97706 0%, #c2410c 50%, #7c2d12 100%) !important;
+  box-shadow: 
+    0 4px 15px rgba(194, 65, 12, 0.35),
+    inset 0 1px 1px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* CLAUDE CITY TAG COLORS */
+.tag-terracotta { color: var(--c-terracotta); }
+.tag-burnt-orange { color: var(--c-burnt-orange); }
+.tag-sand { color: #b45309; }
+.tag-clay { color: var(--c-clay); }
+
+/* CLAUDE BUTTON VARIATIONS */
+.btn-terracotta { 
+  background-color: var(--c-terracotta); 
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.3); 
+}
+.btn-burnt-orange { 
+  background-color: var(--c-burnt-orange); 
+  box-shadow: 0 4px 12px rgba(194, 65, 12, 0.3); 
+}
+.btn-sand { 
+  background-color: #d97706; 
+  color: #ffffff; 
+  box-shadow: 0 4px 12px rgba(217, 119, 6, 0.25); 
+}
+.btn-clay { 
+  background-color: var(--c-clay); 
+  box-shadow: 0 4px 12px rgba(154, 52, 18, 0.3); 
+}
+
+/* CLAUDE PASSPORT STAMP STYLES */
+.stamp-terracotta { color: var(--c-terracotta); border-color: var(--c-terracotta); }
+.stamp-burnt-orange { color: var(--c-burnt-orange); border-color: var(--c-burnt-orange); }
+.stamp-sand { color: #b45309; border-color: #b45309; }
+.stamp-clay { color: var(--c-clay); border-color: var(--c-clay); }
+
+.stamp-terracotta.stamped { background-color: var(--c-terracotta); color: #ffffff; }
+.stamp-burnt-orange.stamped { background-color: var(--c-burnt-orange); color: #ffffff; }
+.stamp-sand.stamped { background-color: #d97706; color: #ffffff; }
+.stamp-clay.stamped { background-color: var(--c-clay); color: #ffffff; }
