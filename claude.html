@@ -34,18 +34,32 @@
         <div class="track-node" data-jump="3" style="left: 75%;"></div>
         <div class="track-node" data-jump="4" style="left: 100%;"></div>
 
-        <!-- Car Marker -->
-        <div class="car-marker" id="car-marker">
-          <svg class="car-svg" viewBox="0 0 60 100" fill="none" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <rect x="10" y="10" width="40" height="80" rx="12" fill="#ffffff" />
-            <path d="M16 32 C16 22, 44 22, 44 32 L40 42 L20 42 Z" fill="#f1f5f9"/>
-            <path d="M18 72 C18 66, 42 66, 42 72 L38 80 L22 80 Z" fill="#f1f5f9"/>
-            <rect x="20" y="44" width="20" height="20" rx="3" />
-            <path d="M6 30 L10 32 M54 30 L50 32" stroke-width="3"/>
-          </svg>
-        </div>
-      </div>
-    </div>
+<!-- JULES VERNE HOT AIR BALLOON MARKER -->
+<div class="car-marker balloon-marker" id="car-marker">
+  <svg class="car-svg" viewBox="0 0 100 120" fill="none" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Outer Envelope / Balloon Body -->
+    <path d="M 50 10 C 20 10, 15 40, 32 68 L 40 82 L 60 82 L 68 68 C 85 40, 80 10, 50 10 Z" fill="#D97706" />
+    
+    <!-- Vintage Vertical Stripes -->
+    <path d="M 50 10 C 35 30, 35 60, 40 82" stroke="#fef3c7" stroke-width="3" />
+    <path d="M 50 10 C 65 30, 65 60, 60 82" stroke="#fef3c7" stroke-width="3" />
+    <path d="M 50 10 L 50 82" stroke="#C2410C" stroke-width="2" />
+
+    <!-- Burner Flame Glow -->
+    <path d="M 46 84 Q 50 78 54 84 Z" fill="#ffe600" stroke="#C2410C" stroke-width="1.5" />
+
+    <!-- Rigging Ropes -->
+    <line x1="38" y1="82" x2="35" y2="96" stroke="#1f2937" stroke-width="2" />
+    <line x1="44" y1="82" x2="41" y2="96" stroke="#1f2937" stroke-width="2" />
+    <line x1="56" y1="82" x2="59" y2="96" stroke="#1f2937" stroke-width="2" />
+    <line x1="62" y1="82" x2="65" y2="96" stroke="#1f2937" stroke-width="2" />
+
+    <!-- Wicker Basket -->
+    <rect x="33" y="96" width="34" height="20" rx="4" fill="#7c2d12" stroke="#1f2937" stroke-width="2.5" />
+    <!-- Basket Weave Accent Line -->
+    <line x1="33" y1="106" x2="67" y2="106" stroke="#D97706" stroke-width="2" stroke-dasharray="3 3" />
+  </svg>
+</div>
 
     <!-- MAIN CAROUSEL AREA -->
     <div class="carousel-wrapper">
