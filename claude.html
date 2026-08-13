@@ -34,28 +34,30 @@
         <div class="track-node" data-jump="3" style="left: 75%;"></div>
         <div class="track-node" data-jump="4" style="left: 100%;"></div>
 
-<!-- WHITE MINIMALIST HOT AIR BALLOON (GEMINI MATCHING STYLE) -->
-<div class="car-marker balloon-marker" id="car-marker">
-  <svg class="car-svg" viewBox="0 0 100 120" fill="none" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-    <!-- Main Balloon Body (White) -->
-    <path d="M 50 10 C 20 10, 15 40, 32 68 L 40 82 L 60 82 L 68 68 C 85 40, 80 10, 50 10 Z" fill="#ffffff" />
-    
-    <!-- Clean Inner Panel Lines (Matches Car Window Details) -->
-    <path d="M 50 10 C 36 30, 36 60, 41 82" fill="none" stroke="#1f2937" stroke-width="2" />
-    <path d="M 50 10 C 64 30, 64 60, 59 82" fill="none" stroke="#1f2937" stroke-width="2" />
-    
-    <!-- Subtle Slate/White Accent Stripe -->
-    <path d="M 41 82 L 59 82 L 55 60 L 45 60 Z" fill="#f1f5f9" stroke="#1f2937" stroke-width="2" />
+        <!-- WHITE MINIMALIST HOT AIR BALLOON MARKER -->
+        <div class="car-marker balloon-marker" id="car-marker">
+          <svg class="car-svg" viewBox="0 0 100 120" fill="none" stroke="#1f2937" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <!-- Main Balloon Body (White) -->
+            <path d="M 50 10 C 20 10, 15 40, 32 68 L 40 82 L 60 82 L 68 68 C 85 40, 80 10, 50 10 Z" fill="#ffffff" />
+            
+            <!-- Clean Inner Panel Lines -->
+            <path d="M 50 10 C 36 30, 36 60, 41 82" fill="none" stroke="#1f2937" stroke-width="2" />
+            <path d="M 50 10 C 64 30, 64 60, 59 82" fill="none" stroke="#1f2937" stroke-width="2" />
+            
+            <!-- Accent Panel -->
+            <path d="M 41 82 L 59 82 L 55 60 L 45 60 Z" fill="#f1f5f9" stroke="#1f2937" stroke-width="2" />
 
-    <!-- Rigging Lines -->
-    <line x1="40" y1="82" x2="37" y2="96" stroke="#1f2937" stroke-width="2.5" />
-    <line x1="60" y1="82" x2="63" y2="96" stroke="#1f2937" stroke-width="2.5" />
+            <!-- Rigging Lines -->
+            <line x1="40" y1="82" x2="37" y2="96" stroke="#1f2937" stroke-width="2.5" />
+            <line x1="60" y1="82" x2="63" y2="96" stroke="#1f2937" stroke-width="2.5" />
 
-    <!-- Minimalist White Basket -->
-    <rect x="34" y="96" width="32" height="18" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="2.5" />
-    <rect x="39" y="101" width="22" height="8" rx="2" fill="#f1f5f9" stroke="#1f2937" stroke-width="1.5" />
-  </svg>
-</div>
+            <!-- Minimalist White Basket -->
+            <rect x="34" y="96" width="32" height="18" rx="4" fill="#ffffff" stroke="#1f2937" stroke-width="2.5" />
+            <rect x="39" y="101" width="22" height="8" rx="2" fill="#f1f5f9" stroke="#1f2937" stroke-width="1.5" />
+          </svg>
+        </div> <!-- FIXED: Closing tag was missing here -->
+      </div>
+    </div>
 
     <!-- MAIN CAROUSEL AREA -->
     <div class="carousel-wrapper">
@@ -76,7 +78,6 @@
                    data-caption="Stop 1: Claude Fundamentals" 
                    data-time="2 Hours" data-reqs="None" data-takeaway="Master core prompting, long-context reasoning, and working with documents in Claude."
                    data-tilt="left">
-            <!-- Distinct Line Art 1: Modern Towers & Grid -->
             <svg class="city-skyline-art" viewBox="0 0 400 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M 10 75 L 390 75 M 40 75 L 40 30 L 80 30 L 80 75 M 90 75 L 90 15 L 140 15 L 140 75 M 105 25 L 125 25 M 105 40 L 125 40 M 105 55 L 125 55 M 220 75 L 220 35 L 260 20 L 300 35 L 300 75 M 320 75 L 320 45 L 360 45 L 360 75" />
             </svg>
@@ -104,7 +105,6 @@
                    data-caption="Stop 2: Working with Artifacts" 
                    data-time="45 Mins" data-reqs="Stop 1 Complete" data-takeaway="Create interactive prototypes, code snippets, and structured documents side-by-side."
                    data-tilt="right">
-            <!-- Distinct Line Art 2: Suspension Bridge & Spire -->
             <svg class="city-skyline-art" viewBox="0 0 400 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M 10 75 L 390 75 M 50 75 L 50 20 L 60 75 M 150 75 L 150 20 L 140 75 M 50 25 Q 100 55 150 25 M 50 40 L 150 40 M 230 75 L 230 10 L 235 5 L 240 10 L 240 75 M 290 75 L 290 45 L 340 45 L 340 75" />
             </svg>
@@ -130,7 +130,6 @@
                    data-caption="Stop 3: Claude Projects" 
                    data-time="30 Mins" data-reqs="None" data-takeaway="Build team knowledge bases with custom project instructions and uploaded docs."
                    data-tilt="left">
-            <!-- Distinct Line Art 3: Classic Arches & Clock Tower -->
             <svg class="city-skyline-art" viewBox="0 0 400 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M 10 75 L 390 75 M 70 75 L 70 30 L 110 30 L 110 75 M 80 40 A 10 10 0 0 1 100 40 L 100 75 M 180 75 L 180 15 L 200 15 L 200 75 M 190 25 A 4 4 0 1 0 190 24 M 270 75 L 270 40 L 320 40 L 320 75" />
             </svg>
@@ -156,7 +155,6 @@
                    data-caption="Stop 4: Advanced Prompting" 
                    data-time="40 Mins" data-reqs="Stop 2 Complete" data-takeaway="Utilize XML tagging, system instructions, and chain-of-thought prompting."
                    data-tilt="right">
-            <!-- Distinct Line Art 4: Geometric Highrise Skyline -->
             <svg class="city-skyline-art" viewBox="0 0 400 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M 10 75 L 390 75 M 40 75 L 70 30 L 100 75 M 150 75 L 150 10 L 190 25 L 190 75 M 250 75 L 250 35 L 290 35 L 290 75 M 330 75 L 330 50 L 370 50 L 370 75" />
             </svg>
@@ -182,7 +180,6 @@
                    data-caption="Stop 5: Mastery & Integration" 
                    data-time="20 Mins" data-reqs="All Stops Complete" data-takeaway="Final assessment and continuous workplace integration playbook."
                    data-tilt="left">
-            <!-- Distinct Line Art 5: Dome & Horizon -->
             <svg class="city-skyline-art" viewBox="0 0 400 80" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M 10 75 L 390 75 M 80 75 A 40 40 0 0 1 160 75 M 120 35 L 120 15 M 220 75 L 220 20 L 260 20 L 260 75 M 300 75 L 300 40 L 350 40 L 350 75" />
             </svg>
