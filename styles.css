@@ -353,6 +353,11 @@ html, body {
   height: 16px; 
 }
 
+/* Make any stamped passport badge fully opaque */
+.passport-stamp.stamped {
+  opacity: 1;
+}
+
 /* GEMINI STAMPS */
 .stamp-coral { color: var(--c-coral); border-color: var(--c-coral); }
 .stamp-lime { color: #6b8800; border-color: #6b8800; }
