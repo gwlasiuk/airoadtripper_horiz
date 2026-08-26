@@ -1,0 +1,276 @@
+<div class="card-container">
+  <div class="polaroid-card">
+    
+    <!-- Front Side -->
+    <div class="card-face card-front">
+      <div class="tape"></div>
+      <div class="photo-area">
+        <div class="gradient-overlay"></div>
+        <div class="badge">AI PATHWAYS</div>
+        <div class="photo-content">
+          <span class="sparkle">✦</span>
+          <h3>LinkedIn Learning</h3>
+        </div>
+      </div>
+      <div class="caption">
+        <p class="caption-text">Interactive GenAI Learning Paths</p>
+        <button class="flip-btn" onclick="this.closest('.polaroid-card').classList.toggle('flipped')">
+          Explore Paths ➔
+        </button>
+      </div>
+    </div>
+
+    <!-- Back Side -->
+    <div class="card-face card-back">
+      <div class="back-header">
+        <span class="step-tag">SELECT A PATH</span>
+        <button class="close-btn" onclick="this.closest('.polaroid-card').classList.remove('flipped')">✕</button>
+      </div>
+      
+      <div class="links-list">
+        <a href="https://www.linkedin.com/learning/paths/career-essentials-in-generative-ai-by-microsoft-and-linkedin?u=75196130" target="_blank" class="link-item">
+          <span class="icon">💻</span>
+          <div class="link-info">
+            <strong>Career Essentials in GenAI</strong>
+            <small>By Microsoft & LinkedIn</small>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="https://www.linkedin.com/learning/paths/generative-ai-for-marketing-professional-certificate-by-the-american-marketing-association?u=75196130" target="_blank" class="link-item">
+          <span class="icon">📈</span>
+          <div class="link-info">
+            <strong>GenAI for Marketing</strong>
+            <small>By AMA</small>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+
+        <a href="https://www.linkedin.com/learning/paths/essential-skills-in-generative-ai-for-creatives-by-adobe?u=75196130" target="_blank" class="link-item">
+          <span class="icon">🎨</span>
+          <div class="link-info">
+            <strong>GenAI for Creatives</strong>
+            <small>By Adobe</small>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&family=Inter:wght@400;600;700&display=swap');
+
+  .card-container {
+    width: 360px;
+    height: 420px;
+    perspective: 1000px;
+    font-family: 'Inter', sans-serif;
+    margin: 20px auto;
+  }
+
+  .polaroid-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  }
+
+  .polaroid-card.flipped {
+    transform: rotateY(180deg);
+  }
+
+  .card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    background: #fcfbfa;
+    border-radius: 4px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04);
+    padding: 16px;
+    box-sizing: border-box;
+    border: 1px solid #eae6df;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Tape Detail */
+  .tape {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 26px;
+    background: rgba(254, 240, 138, 0.7);
+    border: 1px dashed rgba(217, 119, 6, 0.3);
+    backdrop-filter: blur(2px);
+    z-index: 10;
+  }
+
+  /* Front Styles */
+  .photo-area {
+    width: 100%;
+    height: 270px;
+    background: radial-gradient(circle at 50% 50%, #ff758c 0%, #ff7eb3 50%, #764ba2 100%);
+    position: relative;
+    border-radius: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .gradient-overlay {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at top right, rgba(255,255,255,0.3), transparent);
+  }
+
+  .badge {
+    position: absolute;
+    top: 12px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(8px);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+
+  .photo-content {
+    text-align: center;
+    color: white;
+    z-index: 2;
+  }
+
+  .photo-content h3 {
+    margin: 8px 0 0;
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+  .sparkle {
+    font-size: 28px;
+  }
+
+  .caption {
+    margin-top: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .caption-text {
+    font-family: 'Caveat', cursive;
+    font-size: 20px;
+    color: #2b2b2b;
+    margin: 0;
+  }
+
+  .flip-btn {
+    background: #ff4757;
+    color: white;
+    border: none;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .flip-btn:hover {
+    background: #e83845;
+  }
+
+  /* Back Styles */
+  .card-back {
+    transform: rotateY(180deg);
+    background: #f7f5f0;
+    justify-content: start;
+  }
+
+  .back-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+
+  .step-tag {
+    font-size: 11px;
+    font-weight: 700;
+    color: #ff4757;
+    letter-spacing: 1px;
+  }
+
+  .close-btn {
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    color: #666;
+  }
+
+  .links-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .link-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    background: white;
+    border: 1px solid #e2ddd5;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #2b2b2b;
+    transition: all 0.2s ease;
+  }
+
+  .link-item:hover {
+    border-color: #ff4757;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.04);
+  }
+
+  .icon {
+    font-size: 18px;
+    margin-right: 12px;
+  }
+
+  .link-info {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .link-info strong {
+    font-size: 12px;
+    line-height: 1.2;
+  }
+
+  .link-info small {
+    font-size: 10px;
+    color: #666;
+    margin-top: 2px;
+  }
+
+  .arrow {
+    color: #999;
+    font-size: 14px;
+  }
+
+  .link-item:hover .arrow {
+    color: #ff4757;
+  }
+</style>
