@@ -266,7 +266,7 @@
     <div class="polaroid-card">
       
       <!-- Front Side -->
-<div class="card-face card-front" onclick="this.closest('.polaroid-card').classList.toggle('flipped')" style="cursor: pointer;">
+      <div class="card-face card-front">
         <div class="tape"></div>
         <div class="photo-area">
           <div class="noise-overlay"></div>
@@ -284,7 +284,7 @@
           </div>
         </div>
         <div class="caption">
-<div class="flip-btn">
+          <button class="flip-btn" onclick="this.closest('.polaroid-card').classList.toggle('flipped')">
             EXPLORE CERTIFICATIONS ➔
           </button>
         </div>
