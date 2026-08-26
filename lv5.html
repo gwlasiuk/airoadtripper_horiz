@@ -98,7 +98,7 @@
       width: 100%;
       height: 100%;
       opacity: 0.25;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' n[...]
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
       pointer-events: none;
       z-index: 1;
     }
@@ -163,7 +163,6 @@
       letter-spacing: 0.5px;
       cursor: pointer;
       transition: background 0.2s, transform 0.1s;
-      pointer-events: none;
     }
 
     .flip-btn:hover {
@@ -171,16 +170,11 @@
       transform: translateY(-1px);
     }
 
-    .card-front {
-      cursor: pointer;
-    }
-
     /* Back Styles */
     .card-back {
       transform: rotateY(180deg);
       background: #f7f5f0;
       justify-content: start;
-      cursor: pointer;
     }
 
     .back-header {
@@ -205,7 +199,6 @@
       cursor: pointer;
       color: #666;
       font-weight: 700;
-      pointer-events: auto;
     }
 
     .links-list {
@@ -224,7 +217,6 @@
       text-decoration: none;
       color: #2b2b2b;
       transition: all 0.2s ease;
-      pointer-events: auto;
     }
 
     .link-item:hover {
@@ -274,7 +266,7 @@
     <div class="polaroid-card">
       
       <!-- Front Side -->
-      <div class="card-face card-front" onclick="this.closest('.polaroid-card').classList.toggle('flipped')">
+      <div class="card-face card-front">
         <div class="tape"></div>
         <div class="photo-area">
           <div class="noise-overlay"></div>
@@ -292,21 +284,21 @@
           </div>
         </div>
         <div class="caption">
-          <div class="flip-btn">
+          <button class="flip-btn" onclick="this.closest('.polaroid-card').classList.toggle('flipped')">
             EXPLORE CERTIFICATIONS ➔
-          </div>
+          </button>
         </div>
       </div>
 
       <!-- Back Side (3 Links) -->
-      <div class="card-face card-back" onclick="this.closest('.polaroid-card').classList.toggle('flipped')">
+      <div class="card-face card-back">
         <div class="back-header">
           <span class="step-tag">SELECT A CERTIFICATION</span>
-          <button class="close-btn" onclick="event.stopPropagation(); this.closest('.polaroid-card').classList.remove('flipped')">✕</button>
+          <button class="close-btn" onclick="this.closest('.polaroid-card').classList.remove('flipped')">✕</button>
         </div>
         
         <div class="links-list">
-          <a href="https://www.linkedin.com/learning/paths/develop-your-ai-skills-with-google-gemini-and-google-cloud-platform?u=75196130" target="_blank" class="link-item" onclick="event.stopPropagation()">
+          <a href="https://www.linkedin.com/learning/paths/develop-your-ai-skills-with-google-gemini-and-google-cloud-platform?u=75196130" target="_blank" class="link-item">
             <span class="icon">☁️</span>
             <div class="link-info">
               <strong>Gemini & Google Cloud AI</strong>
@@ -315,7 +307,7 @@
             <span class="arrow">→</span>
           </a>
 
-          <a href="https://www.linkedin.com/learning/paths/mlops-essentials-for-developers-and-ai-engineers-tools-pipelines-security" target="_blank" class="link-item" onclick="event.stopPropagation()">
+          <a href="https://www.linkedin.com/learning/paths/mlops-essentials-for-developers-and-ai-engineers-tools-pipelines-security" target="_blank" class="link-item">
             <span class="icon">⚙️</span>
             <div class="link-info">
               <strong>MLOps Essentials</strong>
@@ -324,7 +316,7 @@
             <span class="arrow">→</span>
           </a>
 
-          <a href="https://www.linkedin.com/learning/paths/prepare-for-the-google-cloud-professional-machine-learning-engineer-certification?u=75196130" target="_blank" class="link-item" onclick="event.stopPropagation()">
+          <a href="https://www.linkedin.com/learning/paths/prepare-for-the-google-cloud-professional-machine-learning-engineer-certification?u=75196130" target="_blank" class="link-item">
             <span class="icon">🧠</span>
             <div class="link-info">
               <strong>GCP ML Engineer Cert</strong>
