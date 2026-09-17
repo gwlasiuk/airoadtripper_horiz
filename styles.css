@@ -50,7 +50,7 @@ html, body {
   align-items: center;
   justify-content: flex-start !important;
   background: transparent !important;
-  padding: 0 8px !important;
+  padding: 0 4px !important;
   margin: 0 !important;
   overflow-x: hidden;
 }
@@ -109,7 +109,7 @@ html, body {
 /* HORIZONTAL TRACK WRAPPER */
 .horizontal-track-container {
   width: 100%;
-  max-width: 90%;
+  max-width: 92%;
   margin: 10px auto 16px auto !important;
   position: relative;
   height: 36px;
@@ -185,7 +185,7 @@ html, body {
   width: 100%;
   position: relative;
   z-index: 1;
-  padding: 0 4px;
+  padding: 0 2px;
 }
 
 .nav-arrow {
@@ -224,7 +224,7 @@ html, body {
   align-items: center;
   width: 100%;
   max-width: 100%;
-  padding: 0 6px;
+  padding: 0 4px;
   gap: 16px;
 }
 
@@ -363,7 +363,7 @@ html, body {
 .content-stream {
   position: relative;
   width: 100%;
-  min-height: 290px;
+  min-height: 310px;
   order: 2;
 }
 
@@ -377,7 +377,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 4px;
+  padding: 0 2px;
   opacity: 0;
   pointer-events: none;
   transform: translateY(15px);
@@ -391,14 +391,14 @@ html, body {
 }
 
 .city-skyline-art {
-  display: none; /* Hidden to optimize space on half-screen viewports */
+  display: none;
 }
 
 .city-tag {
   display: inline-block;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   margin-bottom: 4px;
 }
@@ -417,26 +417,26 @@ html, body {
 .tag-clay { color: var(--c-clay); }
 
 .stop-card h2 {
-  font-size: 1.35rem;
+  font-size: 1.45rem; /* Increased title size */
   font-weight: 700;
   margin-bottom: 10px;
   line-height: 1.2;
 }
 
-/* FROSTED RECTANGLE FOR DESCRIPTION COPY */
+/* EXPANDED FROSTED DESCRIPTION BOX & LARGER TEXT */
 .stop-card p {
   width: 100%;
-  max-width: 440px;
-  text-align: left; /* Left-justified text */
-  font-size: 0.86rem;
-  line-height: 1.5;
+  max-width: 96%; /* Expanded width across the column */
+  text-align: left;
+  font-size: 0.95rem; /* Increased font size */
+  line-height: 1.55; /* Improved line height for readability */
   color: var(--text-main);
-  background: rgba(255, 255, 255, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
   border-radius: 12px;
-  padding: 12px 16px;
+  padding: 14px 18px; /* Slightly larger padding */
   margin-bottom: 16px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
 }
@@ -456,10 +456,10 @@ html, body {
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 9px 18px;
+  padding: 10px 20px;
   color: #ffffff;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   font-weight: 600;
   border-radius: 8px;
   transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
