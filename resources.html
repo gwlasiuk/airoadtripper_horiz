@@ -21,6 +21,7 @@
       --c-coral: #FF4E51;
       --c-indigo: #6780FF;
       --c-terracotta: #D97706;
+      --c-teal: #0F8F7F;
 
       /* Glassmorphism Accents */
       --glass-bg: rgba(255, 255, 255, 0.75);
@@ -49,7 +50,7 @@
     /* MAIN CONTAINER: Horizontal row layout */
     .polaroid-links-container {
       width: 100%;
-      max-width: 1150px;
+      max-width: 1250px;
       margin: 0 auto;
       padding: 24px 12px 16px 12px;
       display: flex;
@@ -61,9 +62,9 @@
 
     /* LINK CARD WRAPPER */
     .polaroid-link-card {
-      flex: 1 1 240px;
+      flex: 1 1 220px;
       max-width: 280px;
-      min-width: 210px;
+      min-width: 190px;
       text-decoration: none;
       color: var(--text-main);
       display: flex;
@@ -74,6 +75,7 @@
     }
 
     /* Alternating Natural Tilts */
+    .card-matrix { --card-tilt: 2deg; }
     .card-gemini { --card-tilt: -2.5deg; }
     .card-cursor { --card-tilt: 1.8deg; }
     .card-slack  { --card-tilt: -2deg; }
@@ -130,6 +132,7 @@
       border-radius: 2px;
     }
 
+    /* Shared by <img> and <video> so both fill the square and zoom on hover */
     .photo-img {
       width: 100%;
       height: 100%;
@@ -146,7 +149,7 @@
     .polaroid-caption {
       margin-top: 10px;
       font-family: 'Caveat', cursive;
-      font-size: 1.55rem; /* Increased size */
+      font-size: 1.55rem;
       font-weight: 700;
       color: #111827;
       text-align: center;
@@ -176,7 +179,7 @@
     }
 
     .category-tag {
-      font-size: 0.8rem; /* Increased size */
+      font-size: 0.8rem;
       font-weight: 800;
       letter-spacing: 0.06em;
       text-transform: uppercase;
@@ -185,9 +188,10 @@
     .tag-coral { color: var(--c-coral); }
     .tag-indigo { color: var(--c-indigo); }
     .tag-terracotta { color: var(--c-terracotta); }
+    .tag-teal { color: var(--c-teal); }
 
     .subtitle-text {
-      font-size: 0.9rem; /* Increased size */
+      font-size: 0.9rem;
       color: var(--text-muted);
       line-height: 1.35;
       margin-bottom: 2px;
@@ -201,7 +205,7 @@
       gap: 6px;
       padding: 8px 16px;
       color: #ffffff;
-      font-size: 0.88rem; /* Increased size */
+      font-size: 0.88rem;
       font-weight: 700;
       border-radius: 6px;
       transition: all 0.25s ease;
@@ -211,6 +215,7 @@
     .btn-coral { background-color: var(--c-coral); box-shadow: 0 3px 10px rgba(255, 78, 81, 0.25); }
     .btn-indigo { background-color: var(--c-indigo); box-shadow: 0 3px 10px rgba(103, 128, 255, 0.25); }
     .btn-terracotta { background-color: var(--c-terracotta); box-shadow: 0 3px 10px rgba(217, 119, 6, 0.25); }
+    .btn-teal { background-color: var(--c-teal); box-shadow: 0 3px 10px rgba(15, 143, 127, 0.25); }
 
     .polaroid-link-card:hover .action-btn {
       filter: brightness(1.08);
@@ -218,7 +223,7 @@
     }
 
     .action-btn svg {
-      width: 16px; /* Increased icon size to match larger text */
+      width: 16px;
       height: 16px;
       transition: transform 0.2s ease;
     }
@@ -244,6 +249,27 @@
 <body>
 
   <div class="polaroid-links-container">
+
+    <!-- CARD 0: AI TOOLS CAPABILITY & COST MATRIX (looping video) -->
+    <a href="https://tripadvisor.docebosaas.com/learn/course/3177/ai-tools-at-tripadvisor-capability-cost-matrix?generated_by=20048&hash=8ccaebc04b881d4b295c3c50df08a8f9036ff141" target="_blank" class="polaroid-link-card card-matrix">
+      <div class="polaroid-frame">
+        <div class="tape-strip"></div>
+        <div class="photo-wrapper">
+          <video class="photo-img" src="https://gwlasiuk.github.io/airoadtripper_horiz/sushi.mp4" autoplay muted loop playsinline preload="auto" aria-label="AI Tools at Tripadvisor"></video>
+        </div>
+        <div class="polaroid-caption">AI Tools at Tripadvisor</div>
+      </div>
+      <div class="card-info-box">
+        <span class="category-tag tag-teal">AI TOOLS</span>
+        <span class="subtitle-text">Capability &amp; Cost Matrix</span>
+        <div class="action-btn btn-teal">
+          <span>View Matrix</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </div>
+      </div>
+    </a>
     
     <!-- CARD 1: GEMINI HUB -->
     <a href="https://tripadvisor.docebosaas.com/pages/323/gemini-learning-resource-hub" target="_blank" class="polaroid-link-card card-gemini">
